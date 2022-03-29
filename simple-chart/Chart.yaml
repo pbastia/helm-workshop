@@ -1,0 +1,10 @@
+apiVersion: v2
+name: pbastia
+description: A Demo Helm chart, deploying a single secret
+type: application
+
+# Version of this chart
+version: 1.0.0
+
+# Version of the app being deployed
+appVersion: "0.0.1"
