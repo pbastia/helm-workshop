@@ -1,0 +1,8 @@
+apiVersion: v2
+name: single-postgres
+description: A chart to deploy a single postgres database, along with a PVC.
+type: application
+# Chart version
+version: 0.1.0
+# Application version: postgres 14
+appVersion: "14.2"

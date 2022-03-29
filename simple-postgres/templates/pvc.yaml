@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "single-postgres.name" . }}-postgresql
+  labels:
+{{ include "single-postgres.labels" . | indent 4 }}
+    app: {{ template "single-postgres.name" . }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.capacity | quote }}
+  storageClassName: netapp-file-standard

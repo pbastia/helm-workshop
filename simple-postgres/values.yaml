@@ -1,0 +1,5 @@
+
+replicaCount: 1
+
+pvc:
+  capacity: "100Mi"

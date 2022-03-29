@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "{{ template "single-postgres.name" . }}-postgresql"
+  labels:
+    app: "{{ template "single-postgres.name" . }}"
+  annotations: {}
+spec:
+  ports:
+    - name: 5432-tcp
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+  selector:
+    app: "{{ template "single-postgres.name" . }}"
+    deploymentconfig: "{{ template "single-postgres.name" . }}-postgresql"
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}
+  
